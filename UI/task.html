@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/UI/styles.css">
+
+  <title>Danila Task Manager</title>
+</head>
+
+<body class="beauty-scroll">
+  <input class="header--theme-switch-toggle display-none" type="radio" id="day-theme-close" name="theme-switch">
+  <div class="theme-wrapper">
+    <header class="header">
+      <div class="header--logo-plate">
+        <img class="header--logo" src="/UI/assets/logo.svg" alt="">
+        <b class="header--program-name">
+          Danila
+        </b>
+        <p class="header--program-subject">
+          Task Manager
+        </p>
+      </div>
+
+      <input class="header--theme-switch-toggle display-none" type="radio" id="night-theme-close" name="theme-switch"
+        checked>
+      <div class="header--menu">
+        <label for="night-theme-close" class="btn-m header--theme-switch-button-night">
+          <img class="header--theme" src="/UI/assets/night.svg" alt="">
+        </label>
+
+        <label for="day-theme-close" class="btn-m header--theme-switch-button-sunny">
+          <img class="header--theme" src="/UI/assets/sunny.svg" alt="">
+        </label>
+        <button class="btn-m header--language-switch-button">
+          <p>
+            eng
+          </p>
+        </button>
+        <div class="header--user-plate">
+          <img class="header--user-avatar" src="/UI/assets/user avatar.svg" alt="">
+          <h1 class="header--user-name">Martin Vetrovs</h1>
+          <input class="header--user-plate-hide-toggle display-none" type="radio" id="user-menu-plate-close"
+            name="user-menu-plate" checked>
+          <div class="header--arrow-button-plate">
+            <label for="user-menu-plate-open" class="header--user-plate-open">
+              <img class="header--arrow" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label for="user-menu-plate-close" class="header--user-plate-hide">
+              <img class="header--arrow reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+        </div>
+        <input class="header--user-plate-open-toggle display-none" type="radio" id="user-menu-plate-open"
+          name="user-menu-plate">
+        <div class="header--user-menu">
+          <div class="header--user-menu--to-user-page-button-plate">
+            <button class="btn-s header--to-user-page-button">
+              <p>
+                to user page
+              </p>
+            </button>
+          </div>
+          <div class="header--user-menu--exit-button-plate">
+            <button class="btn-s header--exit-button">
+              <p>
+                exit
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+  <main class="main">
+
+    <div class="main--task-page-container">
+      <div class="main--task-page--task">
+        <div class="task--time-and-buttons">
+          <p class="task--task-add-time">00:00 03.01.2023</p>
+          <div class="task--buttons">
+            <img class="task--edit-button" src="/UI/assets/edit.svg" alt="">
+            <img class="task--delete-button" src="/UI/assets/delete.svg" alt="">
+          </div>
+        </div>
+        <div class="task--task-info">
+          <div class="task--left-bar">
+            <b class="task--task-name">Task name</b>
+            <p class="task--task-description-text">Task description text</p>
+            <div class="task--assignee-plate">
+              <div class="task--assignee-info">
+                <img class="task--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                <p class="task--assignee-name">Martin Vetrovs</p>
+              </div>
+            </div>
+          </div>
+          <div class="task--right-bar">
+            <p class="task--status">Status: To do</p>
+            <p class="task--priority">Priority: High</p>
+            <p class="task--privacy">Privacy: Public</p>
+          </div>
+        </div>
+        <div class="task--task-media">
+          <img class="main--task-page-conteiner--media" src="/UI/assets/media.svg" alt="">
+        </div>
+      </div>
+
+      <div class="main--comments-plate">
+        <p class="comments--title">Comments:</p>
+        <div class="main--comments-conteiner beauty-scroll">
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-00"
+            name="comment-opener-00">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_1.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-00"
+                  name="comment-opener-00" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-00" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-00" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-01"
+            name="comment-opener-01">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_2.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-01"
+                  name="comment-opener-01" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-01" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-01" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-02"
+            name="comment-opener-02">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_3.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-02"
+                  name="comment-opener-02" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-02" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-02" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-03"
+            name="comment-opener-03">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_4.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-03"
+                  name="comment-opener-03" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-03" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-03" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-04"
+            name="comment-opener-04">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_5.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-04"
+                  name="comment-opener-04" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-04" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-04" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+          <input class="main--comment--arrow-open-toggle display-none" type="radio" id="comment--arrow-open-05"
+            name="comment-opener-05">
+          <div class="main--comment">
+            <img class="main--commentator-avatar" src="/UI/assets/random_face_6.svg" alt="">
+            <div class="main--comment-info">
+              <div class="main--comment-metadata">
+                <div class="main--commentator-name-and-date">
+                  <p class="main--commentator-name">
+                    Commentator name
+                  </p>
+                  <p class="main--comment-date-and-time">
+                    00:00 01.01.2023
+                  </p>
+                </div>
+                <input class="main--comment--arrow-hide-toggle display-none" type="radio" id="comment--arrow-hide-05"
+                  name="comment-opener-05" checked>
+                <div class="main--comment--buttons-plate">
+                  <label for="comment--arrow-hide-05" class="main--comment--arrow-hide">
+                    <img class="main--comment--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                  <label for="comment--arrow-open-05" class="main--comment--arrow-open">
+                    <img class="main--comment--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                  </label>
+                </div>
+              </div>
+              <p class="main--comment-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, dolore? Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Doloribus necessitatibus deserunt et iure amet earum, blanditiis numquam
+                veniam corporis totam minus architecto, ipsum maxime. Corrupti deserunt dolore harum placeat sapiente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main--new-comment-plate">
+        <input class="main--new-comment-input" type="text" placeholder="Write here...">
+        <button class="btn-m main--post-a-comment-button">
+          <p>
+            post a comment
+          </p>
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>Danila Task Manager</p>
+    <p>Galinovsky Daniil</p>
+    <p>halinouskid@mail.ru</p>
+    <p>18.02.2023</p>
+  </footer>
+</body>
+
+</html>

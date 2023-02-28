@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/UI/styles.css">
+
+  <title>Danila Task Manager User page</title>
+</head>
+
+<body class="beauty-scroll">
+  <input class="header--theme-switch-toggle display-none" type="radio" id="day-theme-close" name="theme-switch">
+  <div class="theme-wrapper">
+    <header class="header">
+      <div class="header--logo-plate">
+        <img class="header--logo" src="/UI/assets/logo.svg" alt="">
+        <b class="header--program-name">
+          Danila
+        </b>
+        <p class="header--program-subject">
+          Task Manager
+        </p>
+      </div>
+
+      <input class="header--theme-switch-toggle display-none" type="radio" id="night-theme-close" name="theme-switch"
+        checked>
+      <div class="header--menu">
+        <label for="night-theme-close" class="btn-m header--theme-switch-button-night">
+          <img class="header--theme" src="/UI/assets/night.svg" alt="">
+        </label>
+
+        <label for="day-theme-close" class="btn-m header--theme-switch-button-sunny">
+          <img class="header--theme" src="/UI/assets/sunny.svg" alt="">
+        </label>
+        <button class="btn-m header--language-switch-button">
+          <p>
+            eng
+          </p>
+        </button>
+        <div class="header--user-plate">
+          <img class="header--user-avatar" src="/UI/assets/user avatar.svg" alt="">
+          <h1 class="header--user-name">Martin Vetrovs</h1>
+          <input class="header--user-plate-hide-toggle display-none" type="radio" id="user-menu-plate-close"
+            name="user-menu-plate" checked>
+          <div class="header--arrow-button-plate">
+            <label for="user-menu-plate-open" class="header--user-plate-open">
+              <img class="header--arrow" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label for="user-menu-plate-close" class="header--user-plate-hide">
+              <img class="header--arrow reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+        </div>
+        <input class="header--user-plate-open-toggle display-none" type="radio" id="user-menu-plate-open"
+          name="user-menu-plate">
+        <div class="header--user-menu">
+          <div class="header--user-menu--to-user-page-button-plate">
+            <button class="btn-s header--to-user-page-button">
+              <p>
+                to user page
+              </p>
+            </button>
+          </div>
+          <div class="header--user-menu--exit-button-plate">
+            <button class="btn-s header--exit-button">
+              <p>
+                exit
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <main class="main user-page">
+    <div class="main--user-info-plate">
+      <div class="main--user-info--page-name-and-edit-button-plate">
+        <h1 class="main--page-name">
+          User page
+        </h1>
+        <button class="btn-m">
+          <p>back to view mode</p>
+        </button>
+      </div>
+      <div class="main--user-info-plate--user-name-and-password-plates">
+        <div class="main--user-name-plate">
+          <p class="main--user-info-plate--supporting-text">
+            User name
+          </p>
+          <div class="main--user-info-plate--user-name-plate">
+            <p class="main--user-info-plate--user-name">
+              Charlie George
+            </p>
+          </div>
+        </div>
+        <div class="main--password-plate">
+          <p class="main--user-info-plate--supporting-text">
+            Current password
+          </p>
+          <div class="main--password-and-switch">
+            <div class="main--user-info-plate--password-plate">
+              <p class="main--user-info-plate--password">
+                123456789
+              </p>
+              <img class="main--password-concealment-button" src="/UI/assets/eye.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="main--user-info-plate--password-input-plate">
+          <p class="main--plate-title">Enter new password</p>
+          <input class="main--new-task--input" type="text" placeholder="123456789">
+        </div>
+        <div class="main--user-info-plate--password-input-plate">
+          <p class="main--plate-title">Confirm new password</p>
+          <input class="main--new-task--input" type="text" placeholder="123456789">
+        </div>
+      </div>
+      <div class="main--avatar-plate">
+        <img class="main--user-avatar" src="/UI/assets/loaded avatar.svg" alt="">
+        <div class="main--avatar-plate--file-input">
+          <p class="main--avatar-plate--supporting-text">Seleect new avatar</p>
+          <p class="main--avatar-plate--supporting-text">Or drag here new avatar image</p>
+          <img class="main--avatar-plate--file-input-icon" src="/UI/assets/input-icon.svg" alt="">
+        </div>
+      </div>
+      <div class="main--save-and-reset-button">
+        <button class="btn-m main--save-button">
+            <p>
+                save task
+            </p>
+        </button>
+        <button class="btn-m main--reset-button">
+            <p>
+                reset information
+            </p>
+            <img class="main--reset-icon" src="/UI/assets/white-reset.svg" alt="">
+        </button>
+    </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>Danila Task Manager</p>
+    <p>Galinovsky Daniil</p>
+    <p>halinouskid@mail.ru</p>
+    <p>18.02.2023</p>
+  </footer>
+</body>
+
+</html>
