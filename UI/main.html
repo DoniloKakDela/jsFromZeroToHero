@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/UI/styles.css">
+
+  <title>Danila Task Manager</title>
+</head>
+
+<body class="beauty-scroll">
+  <input class="header--theme-switch-toggle display-none" type="radio" id="day-theme-close" name="theme-switch">
+  <div class="theme-wrapper">
+    <header class="header">
+      <div class="header--logo-plate">
+        <img class="header--logo" src="/UI/assets/logo.svg" alt="">
+        <b class="header--program-name">
+          Danila
+        </b>
+        <p class="header--program-subject">
+          Task Manager
+        </p>
+      </div>
+
+      <input class="header--theme-switch-toggle display-none" type="radio" id="night-theme-close" name="theme-switch"
+        checked>
+      <div class="header--menu">
+        <label for="night-theme-close" class="btn-m header--theme-switch-button-night">
+          <img class="header--theme" src="/UI/assets/night.svg" alt="">
+        </label>
+
+        <label for="day-theme-close" class="btn-m header--theme-switch-button-sunny">
+          <img class="header--theme" src="/UI/assets/sunny.svg" alt="">
+        </label>
+        <button class="btn-m header--language-switch-button">
+          <p>
+            eng
+          </p>
+        </button>
+        <div class="header--user-plate">
+          <img class="header--user-avatar" src="/UI/assets/user avatar.svg" alt="">
+          <h1 class="header--user-name">Martin Vetrovs</h1>
+          <input class="header--user-plate-hide-toggle display-none" type="radio" id="user-menu-plate-close"
+            name="user-menu-plate" checked>
+          <div class="header--arrow-button-plate">
+            <label for="user-menu-plate-open" class="header--user-plate-open">
+              <img class="header--arrow" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label for="user-menu-plate-close" class="header--user-plate-hide">
+              <img class="header--arrow reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+        </div>
+        <input class="header--user-plate-open-toggle display-none" type="radio" id="user-menu-plate-open"
+          name="user-menu-plate">
+        <div class="header--user-menu">
+          <div class="header--user-menu--to-user-page-button-plate">
+            <button class="btn-s header--to-user-page-button">
+              <p>
+                to user page
+              </p>
+            </button>
+          </div>
+          <div class="header--user-menu--exit-button-plate">
+            <button class="btn-s header--exit-button">
+              <p>
+                exit
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <input class="main--task-board-columns-toggle display-none" type="radio" id="tasks-display-method-columns"
+      name="tasks-display-method">
+    <main class="main">
+      <div class="main--buttons">
+        <button class="btn-l main--add-task-button">
+          <p>add task</p>
+        </button>
+        <label for="tasks-display-method-columns" class="btn-l main--tasks-interface-switch-button--columns">
+          <p>lists</p>
+        </label>
+        <label for="tasks-display-method-lists" class="btn-l main--tasks-interface-switch-button--lists">
+          <p>columns</p>
+        </label>
+      </div>
+
+      <input class="main--task-board-lists-toggle display-none" type="radio" id="tasks-display-method-lists"
+        name="tasks-display-method" value="list" checked>
+      <div class="main--lists-task-board beauty-scroll">
+
+        <input class="main--list--hide-toggle display-none" type="radio" id="to-do-list-0-closed" name="to-do-list-0">
+        <div class="main--tasks--list beauty-scroll">
+          <div class="main--list--toggle-actions">
+            <input class="main--list--open-toggle display-none" type="radio" id="to-do-list-0-open" name="to-do-list-0"
+              checked>
+            <label class="main--list--open" for="to-do-list-0-open">
+              <img class="main--list--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label class="main--list--hide" for="to-do-list-0-closed">
+              <img class="main--list--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+          <div class="main--column-title">
+            <h1 class="main--column-status">To do</h1>
+
+
+            <input class="main--column--filters-hide-toggle display-none" type="radio" id="to-do-filters-close"
+              name="to-do-filters" checked>
+            <div class="main--burgers">
+              <label for="to-do-filters-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="to-do-filters-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="to-do-filters-open"
+            name="to-do-filters">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main--ilst--tasks-conteiner beauty-scroll">
+            <div class="main--tasks-list--titles">
+              <div class="main--tasks-list--title-date">
+                <p>Date</p>
+              </div>
+              <div class="main--tasks-list--title-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list--title-task-description">
+                <p>Task description</p>
+              </div>
+              <div class="main--tasks-list--title-comments">
+                <p>Comments</p>
+              </div>
+              <div class="main--tasks-list--title-status">
+                <p>Status</p>
+              </div>
+              <div class="main--tasks-list--title-priority">
+                <p>Priority</p>
+              </div>
+              <div class="main--tasks-list--title-privacy">
+                <p>Privacy</p>
+              </div>
+              <div class="main--tasks-list--title-assignee">
+                <p>Assignee</p>
+              </div>
+              <div class="main--tasks-list--moderate"></div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: to do</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--load-more-button-plate">
+              <button class="btn-s main--tasks--load-more-button">
+                <p>load more</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <input class="main--list--hide-toggle display-none" type="radio" id="to-do-list-1-closed" name="to-do-list-1">
+        <div class="main--tasks--list beauty-scroll">
+          <div class="main--list--toggle-actions">
+            <input class="main--list--open-toggle display-none" type="radio" id="to-do-list-1-open" name="to-do-list-1"
+              checked>
+            <label class="main--list--open" for="to-do-list-1-open">
+              <img class="main--list--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label class="main--list--hide" for="to-do-list-1-closed">
+              <img class="main--list--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+          <div class="main--column-title">
+            <h1 class="main--column-status">In progress</h1>
+
+
+            <input class="main--column--filters-hide-toggle display-none" type="radio" id="in-progress-filters-close"
+              name="in-progress-filters" checked>
+            <div class="main--burgers">
+              <label for="in-progress-filters-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="in-progress-filters-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="in-progress-filters-open"
+            name="in-progress-filters">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main--ilst--tasks-conteiner beauty-scroll">
+            <div class="main--tasks-list--titles">
+              <div class="main--tasks-list--title-date">
+                <p>Date</p>
+              </div>
+              <div class="main--tasks-list--title-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list--title-task-description">
+                <p>Task description</p>
+              </div>
+              <div class="main--tasks-list--title-comments">
+                <p>Comments</p>
+              </div>
+              <div class="main--tasks-list--title-status">
+                <p>Status</p>
+              </div>
+              <div class="main--tasks-list--title-priority">
+                <p>Priority</p>
+              </div>
+              <div class="main--tasks-list--title-privacy">
+                <p>Privacy</p>
+              </div>
+              <div class="main--tasks-list--title-assignee">
+                <p>Assignee</p>
+              </div>
+              <div class="main--tasks-list--moderate"></div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: in progress</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--load-more-button-plate">
+              <button class="btn-s main--tasks--load-more-button">
+                <p>load more</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <input class="main--list--hide-toggle display-none" type="radio" id="to-do-list-2-closed" name="to-do-list-2">
+        <div class="main--tasks--list beauty-scroll">
+          <div class="main--list--toggle-actions">
+            <input class="main--list--open-toggle display-none" type="radio" id="to-do-list-2-open" name="to-do-list-2"
+              checked>
+            <label class="main--list--open" for="to-do-list-2-open">
+              <img class="main--list--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+            <label class="main--list--hide" for="to-do-list-2-closed">
+              <img class="main--list--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+            </label>
+          </div>
+          <div class="main--column-title">
+            <h1 class="main--column-status">Complete</h1>
+
+
+            <input class="main--column--filters-hide-toggle display-none" type="radio" id="complete-filters-close"
+              name="complete-filters" checked>
+            <div class="main--burgers">
+              <label for="complete-filters-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="complete-filters-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="complete-filters-open"
+            name="complete-filters">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main--ilst--tasks-conteiner beauty-scroll">
+            <div class="main--tasks-list--titles">
+              <div class="main--tasks-list--title-date">
+                <p>Date</p>
+              </div>
+              <div class="main--tasks-list--title-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list--title-task-description">
+                <p>Task description</p>
+              </div>
+              <div class="main--tasks-list--title-comments">
+                <p>Comments</p>
+              </div>
+              <div class="main--tasks-list--title-status">
+                <p>Status</p>
+              </div>
+              <div class="main--tasks-list--title-priority">
+                <p>Priority</p>
+              </div>
+              <div class="main--tasks-list--title-privacy">
+                <p>Privacy</p>
+              </div>
+              <div class="main--tasks-list--title-assignee">
+                <p>Assignee</p>
+              </div>
+              <div class="main--tasks-list--moderate"></div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--tasks-list--task">
+              <div class="main--tasks-list-date">
+                <p>00:00 01.01.2023</p>
+              </div>
+              <div class="main--tasks-list-task-name">
+                <p>Task name</p>
+              </div>
+              <div class="main--tasks-list-task-description">
+                <p>Task description text</p>
+              </div>
+              <div class="main--tasks-list-comments">
+                <p>-</p>
+              </div>
+              <div class="main--tasks-list-status">
+                <p>Status: complete</p>
+              </div>
+              <div class="main--tasks-list-priority">
+                <p>Priority: high</p>
+              </div>
+              <div class="main--tasks-list-privacy">
+                <p>Privacy: public</p>
+              </div>
+              <div class="main--tasks-list-assignee">
+                <div class="main--assignee-info">
+                  <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                  <p class="main--assignee-name">Martin Vetrovs</p>
+                </div>
+              </div>
+              <div class="main--tasks-list--moderate-buttons">
+                <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+              </div>
+            </div>
+            <div class="main--load-more-button-plate">
+              <button class="btn-s main--tasks--load-more-button">
+                <p>load more</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="main--columns-task-board">
+        <div class="main--column">
+          <div class="main--column-title">
+            <h1 class="main--column-status">To do</h1>
+            <input class="main--column--filters-hide-toggle display-none" type="radio" id="to-do-filters-col-close"
+              name="to-do-filters-col" checked>
+            <div class="main--burgers">
+              <label for="to-do-filters-col-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="to-do-filters-col-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="to-do-filters-col-open"
+            name="to-do-filters-col">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main--column-container  beauty-scroll">
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-0-open"
+                  name="to-do-task-0">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-0-close"
+                    name="to-do-task-0" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-0-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-0-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-1-open"
+                  name="to-do-task-1">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-1-close"
+                    name="to-do-task-1" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-1-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-1-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-2-open"
+                  name="to-do-task-2">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-2-close"
+                    name="to-do-task-2" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-2-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-2-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-3-open"
+                  name="to-do-task-3">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-3-close"
+                    name="to-do-task-3" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-3-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-3-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-4-open"
+                  name="to-do-task-4">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-4-close"
+                    name="to-do-task-4" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-4-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-4-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-5-open"
+                  name="to-do-task-5">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-5-close"
+                    name="to-do-task-5" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-5-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-5-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-6-open"
+                  name="to-do-task-6">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-6-close"
+                    name="to-do-task-6" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-6-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-6-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-7-open"
+                  name="to-do-task-7">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-7-close"
+                    name="to-do-task-7" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-7-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-7-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-8-open"
+                  name="to-do-task-8">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-8-close"
+                    name="to-do-task-8" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-8-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-8-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-9-open"
+                  name="to-do-task-9">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: To do</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-9-close"
+                    name="to-do-task-9" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-9-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-9-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-s main--tasks--load-more-button">
+              <p>load more</p>
+            </button>
+          </div>
+        </div>
+        <div class="main--column">
+          <div class="main--column-title">
+            <h1 class="main--column-status">In progress</h1>
+            <input class="main--column--filters-hide-toggle display-none" type="radio"
+              id="in-progress-filters-col-close" name="in-progress-filters-col" checked>
+            <div class="main--burgers">
+              <label for="in-progress-filters-col-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="in-progress-filters-col-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="in-progress-filters-col-open"
+            name="in-progress-filters-col">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="main--column-container  beauty-scroll">
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-10-open"
+                  name="to-do-task-10">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-10-close"
+                    name="to-do-task-10" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-10-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-10-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-11-open"
+                  name="to-do-task-11">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-11-close"
+                    name="to-do-task-11" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-11-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-11-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-12-open"
+                  name="to-do-task-12">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-12-close"
+                    name="to-do-task-12" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-12-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-12-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-13-open"
+                  name="to-do-task-13">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-13-close"
+                    name="to-do-task-13" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-13-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-13-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-14-open"
+                  name="to-do-task-14">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-14-close"
+                    name="to-do-task-14" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-14-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-14-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-15-open"
+                  name="to-do-task-15">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-15-close"
+                    name="to-do-task-15" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-15-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-15-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-16-open"
+                  name="to-do-task-16">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-16-close"
+                    name="to-do-task-16" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-16-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-16-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-17-open"
+                  name="to-do-task-17">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-17-close"
+                    name="to-do-task-17" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-17-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-17-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-18-open"
+                  name="to-do-task-18">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-18-close"
+                    name="to-do-task-18" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-18-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-18-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-19-open"
+                  name="to-do-task-19">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: In progress</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-19-close"
+                    name="to-do-task-19" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-19-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-19-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-s main--tasks--load-more-button">
+              <p>load more</p>
+            </button>
+          </div>
+        </div>
+        <div class="main--column">
+          <div class="main--column-title">
+            <h1 class="main--column-status">Complete</h1>
+            <input class="main--column--filters-hide-toggle display-none" type="radio" id="complete-filters-col-close"
+              name="complete-filters-col" checked>
+            <div class="main--burgers">
+              <label for="complete-filters-col-open" class="main--column--filters-open">
+                <img class="main--burger-open" src="/UI/assets/burger.svg" alt="">
+              </label>
+              <label for="complete-filters-col-close" class="main--column--filters-hide">
+                <img class="main--burger-close" src="/UI/assets/burger.svg" alt="">
+              </label>
+            </div>
+          </div>
+
+          <input class="main--column--filters-open-toggle display-none" type="radio" id="complete-filters-col-open"
+            name="complete-filters-col">
+          <div class="main--filters-conteiner">
+            <div class="main--filters--conteiner-title-and-reset-button">
+              <b class="main--filters--title">Filters</b>
+              <img class="main--filters--reset-icon" src="/UI/assets/reset_icone.svg" alt="">
+            </div>
+            <div class="main--filters--assignee-name-filtering">
+              <input class="main--filters--assignee-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by assignee name
+              </p>
+            </div>
+            <div class="main--filters--time-filtering">
+              <div class="main--filters--time--from-plate">
+                <p class="main--filters--supporting-text-from">From</p>
+                <input class="main--filters--from" type="datetime-local">
+              </div>
+              <div class="main--filters--time--to-plate">
+                <p class="main--filters--supporting-text-to">to</p>
+                <input class="main--filters--to" type="datetime-local">
+              </div>
+            </div>
+            <div class="main--filters--task-name-filtering">
+              <input class="main--filters--task-name-input" type="text" placeholder="Write here...">
+              <p class="main--filters--input-supporting-text">
+                Search by task name
+              </p>
+            </div>
+            <div class="main--filters--priority-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by priority
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--priority-high">
+                  <p>
+                    high
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-medium">
+                  <p>
+                    medium
+                  </p>
+                </div>
+                <div class="btn-s main--filters--priority-low">
+                  <p>
+                    low
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main--filters--privacy-filtering">
+              <p class="main--filters--supporting-text">
+                Filter by privacy
+              </p>
+              <div class="main--filters--buttons">
+                <div class="btn-s main--filters--privacy-public">
+                  <p>
+                    public
+                  </p>
+                </div>
+                <div class="btn-s main--filters--privacy-private">
+                  <p>
+                    private
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="main--column-container  beauty-scroll">
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-20-open"
+                  name="to-do-task-20">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-20-close"
+                    name="to-do-task-20" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-20-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-20-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-21-open"
+                  name="to-do-task-21">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-21-close"
+                    name="to-do-task-21" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-21-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-21-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-22-open"
+                  name="to-do-task-22">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-22-close"
+                    name="to-do-task-22" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-22-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-22-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-23-open"
+                  name="to-do-task-23">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-23-close"
+                    name="to-do-task-23" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-23-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-23-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-24-open"
+                  name="to-do-task-24">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-24-close"
+                    name="to-do-task-24" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-24-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-24-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-25-open"
+                  name="to-do-task-25">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-25-close"
+                    name="to-do-task-25" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-25-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-25-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-26-open"
+                  name="to-do-task-26">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-26-close"
+                    name="to-do-task-26" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-26-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-26-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-27-open"
+                  name="to-do-task-27">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-27-close"
+                    name="to-do-task-27" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-27-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-27-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-28-open"
+                  name="to-do-task-28">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-28-close"
+                    name="to-do-task-28" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-28-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-28-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main--task">
+              <div class="main--time-and-buttons">
+                <p class="main--task-add-time">00:00 03.01.2023</p>
+                <div class="main--task--buttons">
+                  <img class="main--edit-button" src="/UI/assets/edit.svg" alt="">
+                  <img class="main--delete-button" src="/UI/assets/delete.svg" alt="">
+                </div>
+              </div>
+              <div class="main--task-info">
+                <p class="main--task-name">Task name</p>
+                <input class="main--task--additional-toggle display-none" type="radio" id="to-do-task-29-open"
+                  name="to-do-task-29">
+                <div class="main--editional-task-info">
+                  <p class="main--task-description">
+                    Task description text
+                  </p>
+                  <img class="main--media" src="/UI/assets/media.svg" alt="">
+                  <div class="main--task-info-conteiner">
+                    <div class="main--task-info--left-bar">
+                      <p class="main--task--comments">Сomments: -</p>
+                      <p class="main--task--status">Status: Complete</p>
+                    </div>
+                    <div class="main--task-info--right-bar">
+                      <p class="main--task--priority">Priority: High</p>
+                      <p class="main--task--privacy">Privacy: Public</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="main--assignee-plate">
+                  <div class="main--assignee-info">
+                    <img class="main--assignee-avatar" src="/UI/assets/smoll_avatar.svg" alt="">
+                    <p class="main--assignee-name">Martin Vetrovs</p>
+                  </div>
+                  <input class="main--task--hide-toggle display-none" type="radio" id="to-do-task-29-close"
+                    name="to-do-task-29" checked>
+                  <div class="main--task--toggle-actions">
+                    <label class="main--task--open" for="to-do-task-29-open">
+                      <img class="main--task--arrow-down" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                    <label class="main--task--hide" for="to-do-task-29-close">
+                      <img class="main--task--arrow-down reverse" src="/UI/assets/arrow-down.svg" alt="">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-s main--tasks--load-more-button">
+              <p>load more</p>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Danila Task Manager</p>
+      <p>Galinovsky Daniil</p>
+      <p>halinouskid@mail.ru</p>
+      <p>18.02.2023</p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
