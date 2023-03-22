@@ -1,428 +1,669 @@
-const tasks = [
+/* eslint-disable max-classes-per-file */
+/* eslint-disable no-console */
+const objectTasks = [
   {
-    id: "1",
-    name: "Создать логотип приложения",
-    description: "Формат изображения – svg, размеры - 100х100px",
-    createdAt: new Date("2023-02-09T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "In progress",
-    priority: "High",
+    id: '1',
+    name: 'Создать логотип приложения',
+    description: 'Формат изображения – svg, размеры - 100х100px',
+    createdAt: new Date('2023-02-09T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [],
   },
   {
-    id: "2",
-    name: "Переименовать константу DELAY_TIME",
+    id: '2',
+    name: 'Переименовать константу DELAY#TIME',
     description:
-      "Необходимо переименовать константу с DELAY_TIME на DELAY_API_TIME",
-    createdAt: new Date("2023-02-10T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "To Do",
-    priority: "Medium",
+      'Необходимо переименовать константу с DELAY#TIME на DELAY#API#TIME',
+    createdAt: new Date('2023-02-10T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "1",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-10T23:00:05"),
-        author: "Иванов Иван",
+        id: '1',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-10T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "3",
-    name: "Lorem, ipsum dolor.",
+    id: '3',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-11T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-11T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "2",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-11T23:00:05"),
-        author: "Иванов Иван",
+        id: '2',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-11T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "4",
-    name: "Lorem, ipsum.",
+    id: '4',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-12T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-12T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "3",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-12T23:00:05"),
-        author: "Иванов Иван",
+        id: '3',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-12T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "5",
-    name: "Lorem ipsum dolor sit.",
+    id: '5',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-13T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-13T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "4",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-13T23:00:05"),
-        author: "Иванов Иван",
+        id: '4',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-13T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "6",
-    name: "Lorem, ipsum dolor.",
+    id: '6',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-14T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-14T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "5",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-14T23:00:05"),
-        author: "Иванов Иван",
+        id: '5',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-14T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "7",
-    name: "Lorem, ipsum.",
+    id: '7',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-15T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-15T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "6",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-15T23:00:05"),
-        author: "Иванов Иван",
+        id: '6',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-15T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "8",
-    name: "Lorem ipsum dolor sit.",
+    id: '8',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-16T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-16T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "7",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-16T23:00:05"),
-        author: "Иванов Иван",
+        id: '7',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-16T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "9",
-    name: "Lorem, ipsum dolor.",
+    id: '9',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-17T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-17T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "8",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-17T23:00:05"),
-        author: "Иванов Иван",
+        id: '8',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-17T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "10",
-    name: "Lorem, ipsum.",
+    id: '10',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-18T23:00:00"),
-    assignee: "Иванов Иван",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-18T23:00:00'),
+    assignee: 'Иванов Иван',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "9",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-18T23:00:05"),
-        author: "Иванов Иван",
+        id: '9',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-18T23:00:05'),
+        author: 'Иванов Иван',
       },
     ],
   },
   {
-    id: "11",
-    name: "Lorem ipsum dolor sit.",
+    id: '11',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-19T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-19T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "10",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-19T23:00:05"),
-        author: "Данилов Данила",
+        id: '10',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-19T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "12",
-    name: "Lorem, ipsum dolor.",
+    id: '12',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-20T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-20T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "11",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-20T23:00:05"),
-        author: "Данилов Данила",
+        id: '11',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-20T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "13",
-    name: "Lorem, ipsum.",
+    id: '13',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-21T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-21T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "12",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-21T23:00:05"),
-        author: "Данилов Данила",
+        id: '12',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-21T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "14",
-    name: "Lorem ipsum dolor sit.",
+    id: '14',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-22T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-22T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "13",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-22T23:00:05"),
-        author: "Данилов Данила",
+        id: '13',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-22T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "15",
-    name: "Lorem, ipsum dolor.",
+    id: '15',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-23T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-23T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "14",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-23T23:00:05"),
-        author: "Данилов Данила",
+        id: '14',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-23T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "16",
-    name: "Lorem, ipsum.",
+    id: '16',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-24T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-24T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "15",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-24T23:00:05"),
-        author: "Данилов Данила",
+        id: '15',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-24T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "17",
-    name: "Lorem ipsum dolor sit.",
+    id: '17',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-25T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-25T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "16",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-25T23:00:05"),
-        author: "Данилов Данила",
+        id: '16',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-25T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "18",
-    name: "Lorem, ipsum dolor.",
+    id: '18',
+    name: 'Lorem, ipsum dolor.',
     description:
-      "Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    createdAt: new Date("2023-02-26T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "To Do",
-    priority: "Medium",
+      'Lorem, ipsum dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    createdAt: new Date('2023-02-26T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'To Do',
+    priority: 'Medium',
     isPrivate: false,
     comments: [
       {
-        id: "17",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-26T23:00:05"),
-        author: "Данилов Данила",
+        id: '17',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-26T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "19",
-    name: "Lorem, ipsum.",
+    id: '19',
+    name: 'Lorem, ipsum.',
     description:
-      "Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.",
-    createdAt: new Date("2023-02-27T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "Complete",
-    priority: "Low",
+      'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
+    createdAt: new Date('2023-02-27T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'Complete',
+    priority: 'Low',
     isPrivate: false,
     comments: [
       {
-        id: "18",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-27T23:00:05"),
-        author: "Данилов Данила",
+        id: '18',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-27T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
   {
-    id: "20",
-    name: "Lorem ipsum dolor sit.",
+    id: '20',
+    name: 'Lorem ipsum dolor sit.',
     description:
-      "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    createdAt: new Date("2023-02-28T23:00:00"),
-    assignee: "Данилов Данила",
-    status: "In progress",
-    priority: "High",
+      'Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.',
+    createdAt: new Date('2023-02-28T23:00:00'),
+    assignee: 'Данилов Данила',
+    status: 'In progress',
+    priority: 'High',
     isPrivate: true,
     comments: [
       {
-        id: "19",
-        text: "Будет сделано!",
-        createdAt: new Date("2023-02-28T23:00:05"),
-        author: "Данилов Данила",
+        id: '19',
+        text: 'Будет сделано!',
+        createdAt: new Date('2023-02-28T23:00:05'),
+        author: 'Данилов Данила',
       },
     ],
   },
 ];
 
-const module = (function () {
-  var user = "Данилов Данила";
+// 1
+class Task {
+  #id;
 
-  function getTasks(skip = 0, top = 10, filterConfig) {
-    let sortedTasks = tasks;
+  #name;
 
-    sortedTasks.sort(function (a, b) {
-      return a.createdAt.getTime() - b.createdAt.getTime();
-    });
+  #description;
 
-    let filteredTasks = sortedTasks.filter((task) => {
+  #createdAt;
+
+  #assignee;
+
+  #status;
+
+  #priority;
+
+  #isPrivate;
+
+  #comments;
+
+  constructor(
+    name,
+    description,
+    assignee,
+    status,
+    priority,
+    isPrivate,
+    id,
+    createdAt,
+  ) {
+    this.#id = id ?? `${Math.floor(Math.random() * 1000000000)}`;
+    this.#name = name;
+    this.#description = description;
+    this.#createdAt = createdAt ?? new Date();
+    this.#assignee = assignee;
+    this.#status = status;
+    this.#priority = priority;
+    this.#isPrivate = isPrivate;
+    this.#comments = [];
+  }
+
+  get id() {
+    return this.#id;
+  }
+
+  get name() {
+    return this.#name;
+  }
+
+  set name(value) {
+    if (value.length > 100) {
+      throw new Error('Name is too long');
+    }
+    this.#name = value;
+  }
+
+  get description() {
+    return this.#description;
+  }
+
+  set description(value) {
+    if (value.length > 280) {
+      throw new Error('Description is too long');
+    }
+    this.#description = value;
+  }
+
+  get createdAt() {
+    return this.#createdAt;
+  }
+
+  get assignee() {
+    return this.#assignee;
+  }
+
+  set assignee(value) {
+    if (!value) {
+      throw new Error('Assignee is required');
+    }
+    this.#assignee = value;
+  }
+
+  get status() {
+    return this.#status;
+  }
+
+  set status(value) {
+    if (!value || !['To Do', 'In progress', 'Complete'].includes(value)) {
+      throw new Error('Invalid status');
+    }
+    this.#status = value;
+  }
+
+  get priority() {
+    return this.#priority;
+  }
+
+  set priority(value) {
+    if (!value || !['High', 'Medium', 'Low'].includes(value)) {
+      throw new Error('Invalid priority');
+    }
+    this.#priority = value;
+  }
+
+  get isPrivate() {
+    return this.#isPrivate;
+  }
+
+  set isPrivate(value) {
+    if (typeof value !== 'boolean') {
+      throw new Error('Invalid isPrivate value');
+    }
+    this.#isPrivate = value;
+  }
+
+  get comments() {
+    return this.#comments;
+  }
+
+  set comments(value) {
+    if (!Array.isArray(value)) {
+      throw new Error('Comments must be an array');
+    }
+    this.#comments = value;
+  }
+
+  static validate(task) {
+    if (!task.id || typeof task.id !== 'string'
+      || !task.name
+      || typeof task.name !== 'string'
+      || task.name.length > 100
+      || !task.description
+      || typeof task.description !== 'string'
+      || task.description.length > 280
+      || !task.createdAt
+      || !(task.createdAt instanceof Date)
+      || !task.assignee
+      || typeof task.assignee !== 'string'
+      || task.assignee.trim() === ''
+      || !task.status
+      || typeof task.status !== 'string'
+      || !['To Do', 'In progress', 'Complete'].includes(task.status)
+      || !task.priority
+      || typeof task.priority !== 'string'
+      || !['High', 'Medium', 'Low'].includes(task.priority)
+      || typeof task.isPrivate !== 'boolean'
+      || !task.comments
+      || !Array.isArray(task.comments)) {
+      return false;
+    }
+    return true;
+  }
+}
+
+// 2
+
+class Comment {
+  #id;
+
+  #text;
+
+  #createdAt;
+
+  #author;
+
+  #user = 'Данилов Данила';
+
+  constructor(text) {
+    this.#id = `${Math.floor(Math.random() * 1000000000)}`;
+    this.#text = text;
+    this.#createdAt = new Date();
+    this.#author = this.#user;
+  }
+
+  get id() {
+    return this.#id;
+  }
+
+  get text() {
+    return this.#text;
+  }
+
+  set text(value) {
+    this.#text = value;
+  }
+
+  get createdAt() {
+    return this.#createdAt;
+  }
+
+  get author() {
+    return this.#author;
+  }
+
+  set author(value) {
+    this.#author = value;
+  }
+
+  static validate(comment) {
+    if (
+      typeof comment.id !== 'string'
+      || comment.id.trim().length === 0
+      || typeof comment.text !== 'string'
+      || comment.text.trim().length === 0
+      || comment.text.trim().length > 280
+      || !(comment.createdAt instanceof Date)
+      || typeof comment.author !== 'string'
+      || comment.author.trim().length === 0
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+}
+
+// 3
+
+const tasks = objectTasks.map((obj) => new Task(
+  obj.name,
+  obj.description,
+  obj.assignee,
+  obj.status,
+  obj.priority,
+  obj.isPrivate,
+));
+
+class TaskCollection {
+  #tasks = tasks;
+
+  #user = 'Данилов Данила';
+
+  getPage(skip = 0, top = 10, filterConfig = {}) {
+    const sortedTasks = this.#tasks.slice().sort(
+      (a, b) => a.createdAt.getTime() - b.createdAt.getTime(),
+    );
+
+    const filteredTasks = sortedTasks.filter((task) => {
       if (
-        typeof filterConfig?.assignee === "string" &&
-        !task.assignee.includes(filterConfig.assignee)
+        typeof filterConfig?.id === 'string'
+        && !task.id.includes(filterConfig.id)
       ) {
         return false;
       }
       if (
-        filterConfig?.dateFrom !== undefined &&
-        filterConfig.dateFrom.getTime() > task.createdAt.getTime()
+        typeof filterConfig?.name === 'string'
+        && !(task.name === filterConfig.name)
       ) {
         return false;
       }
       if (
-        filterConfig?.dateTo !== undefined &&
-        filterConfig.dateTo.getTime() < task.createdAt.getTime()
+        typeof filterConfig?.assignee === 'string'
+        && !task.assignee.includes(filterConfig.assignee)
       ) {
         return false;
       }
       if (
-        filterConfig?.status !== undefined &&
-        filterConfig.status !== task.status
+        filterConfig?.dateFrom !== undefined
+        && filterConfig.dateFrom.getTime() > task.createdAt.getTime()
       ) {
         return false;
       }
       if (
-        filterConfig?.priority !== undefined &&
-        filterConfig.priority !== task.priority
+        filterConfig?.dateTo !== undefined
+        && filterConfig.dateTo.getTime() < task.createdAt.getTime()
       ) {
         return false;
       }
       if (
-        filterConfig?.isPrivate !== undefined &&
-        filterConfig.isPrivate !== task.isPrivate
+        filterConfig?.status !== undefined
+        && filterConfig.status !== task.status
       ) {
         return false;
       }
       if (
-        typeof filterConfig?.description === "string" &&
-        !task.description.includes(filterConfig.description)
+        filterConfig?.priority !== undefined
+        && filterConfig.priority !== task.priority
+      ) {
+        return false;
+      }
+      if (
+        filterConfig?.isPrivate !== undefined
+        && filterConfig.isPrivate !== task.isPrivate
+      ) {
+        return false;
+      }
+      if (
+        typeof filterConfig?.description === 'string'
+        && !task.description.includes(filterConfig.description)
       ) {
         return false;
       }
@@ -432,231 +673,150 @@ const module = (function () {
     return filteredTasks.slice(skip, skip + top);
   }
 
-  function getTask(id) {
-    return tasks.find((task) => task.id === id);
+  get(id) {
+    return this.#tasks.find((task) => task.id === id);
   }
 
-  function isUniqueTask(task) {
-    return tasks.findIndex((value) => value.id === task.id) === -1;
+  isUniqueTask(task) {
+    return this.#tasks.findIndex((value) => value.id === task.id) === -1;
   }
 
-  function validateTask(task) {
-    return (
-      Boolean(task.id) &&
-      typeof task.name === "string" &&
-      task.name.length <= 100 &&
-      typeof task.description === "string" &&
-      task.description.length <= 280 &&
-      task.createdAt instanceof Date &&
-      Boolean(task.assignee) &&
-      typeof task.status === "string" &&
-      ["To Do", "In Progress", "Complete"].includes(task.status) &&
-      typeof task.priority === "string" &&
-      ["High", "Medium", "Low"].includes(task.priority) &&
-      typeof task.isPrivate === "boolean" &&
-      task.comments instanceof Array
+  add(name, description, assignee, status, priority, isPrivate) {
+    const task = new Task(name, description, assignee, status, priority, isPrivate);
+
+    if (Task.validate(task)) {
+      this.#tasks.push(task);
+      return true;
+    }
+
+    return false;
+  }
+
+  edit(id, name, description, assignee, status, priority, isPrivate) {
+    const taskId = this.#tasks.findIndex((task) => task.id === id);
+    if (taskId === -1) {
+      return false;
+    }
+
+    if (this.#user !== this.#tasks[taskId].assignee) {
+      return false;
+    }
+
+    const newTask = new Task(
+      name ?? this.#tasks[taskId].name,
+      description ?? this.#tasks[taskId].description,
+      assignee ?? this.#tasks[taskId].assignee,
+      status ?? this.#tasks[taskId].status,
+      priority ?? this.#tasks[taskId].priority,
+      isPrivate ?? this.#tasks[taskId].isPrivate,
+      this.#tasks[taskId].id,
+      this.#tasks[taskId].createdAt,
     );
-  }
 
-  function addTask(name, description, assignee, status, priority, isPrivate) {
-    const task = {
-      id: `${Math.floor(Math.random() * 1000000000)}`,
-      name: name,
-      description: description,
-      createdAt: new Date(),
-      assignee: assignee ?? user,
-      status: status,
-      priority: priority,
-      isPrivate: isPrivate,
-      comments: [],
-    };
-
-    if (validateTask(task) && isUniqueTask(task)) {
-      tasks.push(task);
+    if (Task.validate(newTask)) {
+      this.#tasks[taskId] = newTask;
       return true;
     }
 
     return false;
   }
 
-  function editTask(
-    id,
-    name,
-    description,
-    assignee,
-    status,
-    priority,
-    isPrivate
-  ) {
-    const taskId = tasks.findIndex((task) => task.id === id);
+  remove(id) {
+    const taskId = this.#tasks.findIndex((task) => task.id === id);
     if (taskId === -1) {
       return false;
     }
 
-    if (user !== tasks[taskId].assignee) {
+    if (this.#user !== this.#tasks[taskId].assignee) {
       return false;
     }
 
-    const newTask = {
-      ...tasks[taskId],
-      name: name ?? tasks[taskId].name,
-      description: description ?? tasks[taskId].description,
-      assignee: assignee ?? tasks[taskId].assignee,
-      status: status ?? tasks[taskId].status,
-      priority: priority ?? tasks[taskId].priority,
-      isPrivate: isPrivate ?? tasks[taskId].isPrivate,
-    };
-
-    if (validateTask(newTask)) {
-      tasks[taskId] = newTask;
-      return true;
-    }
-
-    return false;
-  }
-
-  function removeTask(id) {
-    const taskId = tasks.findIndex((task) => task.id === id);
-    if (taskId === -1) {
-      return false;
-    }
-
-    if (user !== tasks[taskId].assignee) {
-      return false;
-    }
-
-    tasks.splice(taskId, 1);
+    this.#tasks.splice(taskId, 1);
     return true;
   }
 
-  function isUniqueComment(comment) {
+  isUniqueComment(comment) {
     return (
-      tasks.findIndex(
-        (task) => task.comments.findIndex((com) => com.id === comment.id) !== -1
+      this.#tasks.findIndex(
+        (task) => task.comments.findIndex((com) => com.id === comment.id) !== -1,
       ) === -1
     );
   }
 
-  function validateComment(comment) {
-    return (
-      Boolean(comment.id) &&
-      typeof comment.text === "string" &&
-      comment.text.length <= 280 &&
-      comment.createdAt instanceof Date &&
-      Boolean(comment.author) &&
-      typeof comment.author === "string"
-    );
-  }
-
-  function addComment(id, text) {
-    const taskId = tasks.findIndex((task) => task.id === id);
+  addComment(idOfTask, comText) {
+    const taskId = this.#tasks.findIndex((task) => task.id === idOfTask);
     if (taskId === -1) {
       return false;
     }
 
-    const newComment = {
-      id: `${Math.floor(Math.random() * 1000000000)}`,
-      text: text,
-      createdAt: new Date(),
-      author: user,
-    };
-
-    if (validateComment(newComment) && isUniqueComment(newComment)) {
-      tasks[taskId].comments.push(newComment);
+    const newComment = new Comment(comText);
+    if (Comment.validate(newComment)) {
+      this.#tasks[taskId].comments.push(newComment);
       return true;
     }
-
     return false;
   }
 
-  function changeUser(usr) {
-    user = usr;
+  addAll(newTasks) {
+    const invalidTasks = [];
+    newTasks.forEach((task) => {
+      if (Task.validate(task)) {
+        this.#tasks.push(task);
+      } else {
+        invalidTasks.push(task);
+      }
+    });
+    return invalidTasks;
   }
 
-  return {
-    getTasks,
-    getTask,
-    validate: validateTask,
-    addTask,
-    editTask,
-    removeTask,
-    validateComment,
-    addComment,
-    changeUser,
-  };
-})();
+  clear() {
+    this.#tasks = [];
+  }
 
-console.log("getTasks");
+  get user() {
+    return this.#user;
+  }
 
-console.log(module.getTasks(0, 10));
-console.log(module.getTasks(3, 2));
-console.log(module.getTasks(0, 10, {}));
-console.log(module.getTasks(0, 10, { assignee: "Данилов Данила" }));
-console.log(
-  module.getTasks(0, 10, {
-    assignee: "Данилов Данила",
-    dateFrom: new Date("2023-02-22T23:00:05"),
-    dateTo: new Date("2023-02-26T23:00:05"),
-    priority: "High",
-    status: "In progress",
-  })
-);
+  set user(name) {
+    this.#user = name;
+  }
+}
 
-console.log("getTask");
+const collection = new TaskCollection();
 
-console.log(module.getTask("12"));
-console.log(module.getTask("100000000000"));
+console.log(collection.getPage(0, 10));
+console.log(collection.getPage(3, 5, { priority: 'High' }));
+console.log(collection.getPage(0, 3, { name: 'Lorem, ipsum dolor.' }));
 
-console.log("addTask");
+const tempId = collection.getPage(0, 10)[0].id;
 
-console.log(
-  module.addTask(
-    "Lorem ipsum dolor sit.",
-    "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    null,
-    "In Progress",
-    "High",
-    true
-  )
-);
+console.log(collection.get(tempId));
+console.log(collection.get('52'));
 
-console.log(
-  module.addTask(
-    "Lorem ipsum dolor sit.",
-    "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing.",
-    null,
-    "Asd",
-    "df",
-    true
-  )
-);
+console.log(collection.add('Add color', 'Add color in this', 'Данилов Данила', 'To Do', 'Low', true));
+console.log(collection.add('Add data', 'Add data in this', 'Данилов Данила', 'To Do', 'Low', 'true'));
 
-console.log("addComment");
+console.log(collection.edit(tempId, 'Add data', 'Add data in this', 'Данилов Данила', 'To Do', 'Low', true));
+collection.user = 'Иванов Иван';
+console.log(collection.edit(tempId, 'Add data', 'Add data in this', 'Иванов Иван', 'To Do', 'Low', true));
 
-console.log(module.getTask("12").comments);
-console.log(module.addComment("12", "Привет!"));
-console.log(module.getTask("12").comments);
-console.log(
-  module.addComment(
-    "12",
-    'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'
-  )
-);
-console.log(module.getTask("12").comments);
+console.log(collection.get(tempId).comments);
+console.log(collection.addComment(tempId, 'Add data'));
+console.log(collection.get(tempId).comments);
+console.log(collection.addComment(tempId, true));
+console.log(collection.get(tempId).comments);
 
-console.log("editTask, getTask, changeUser");
+console.log('remove');
+collection.user = 'Данилов Данила';
+console.log(collection.remove(tempId));
+collection.user = 'Иванов Иван';
+console.log(collection.remove(tempId));
+console.log(collection.get(tempId));
 
-console.log(module.getTask("12"));
-console.log(module.editTask("12", "Lorem"));
-console.log(module.getTask("12"));
-console.log(module.changeUser("New User"));
-console.log(module.editTask("12", "Lorem 2"));
-console.log(module.getTask("12"));
+console.log('clear');
+console.log(collection.clear());
+console.log(collection.getPage(0, 10));
 
-console.log("removeTask, getTask, changeUser");
-
-console.log(module.removeTask("12"));
-console.log(module.getTask("12"));
-console.log(module.changeUser("Данилов Данила"));
-console.log(module.removeTask("12"));
-console.log(module.getTask("12"));
+console.log('addAll');
+console.log(collection.addAll(tasks));
+console.log(collection.getPage(0, 10));
