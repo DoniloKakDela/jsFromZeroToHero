@@ -111,7 +111,7 @@ const objectTasks = [
     description:
       'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
     createdAt: new Date('2023-02-15T23:00:00'),
-    assignee: 'Frodo Baggins',
+    assignee: 'Saruman',
     status: 'Complete',
     priority: 'Low',
     isPrivate: false,
@@ -139,7 +139,7 @@ const objectTasks = [
         id: '7',
         text: 'Будет сделано!',
         createdAt: new Date('2023-02-16T23:00:05'),
-        author: 'Frodo Baggins',
+        author: 'Saruman',
       },
     ],
   },
@@ -225,7 +225,7 @@ const objectTasks = [
     description:
       'Lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.',
     createdAt: new Date('2023-02-21T23:00:00'),
-    assignee: 'Frodo Baggins',
+    assignee: 'Saruman',
     status: 'Complete',
     priority: 'Low',
     isPrivate: false,
@@ -234,7 +234,7 @@ const objectTasks = [
         id: '12',
         text: 'Будет сделано!',
         createdAt: new Date('2023-02-21T23:00:05'),
-        author: 'Frodo Baggins',
+        author: 'Saruman',
       },
     ],
   },
@@ -535,7 +535,7 @@ class Comment {
 
   #author;
 
-  #currentUser = 'Frodo Baggins';
+  #currentUser = document.getElementById('current-user').innerHTML;
 
   constructor(text) {
     this.#id = `${Math.floor(Math.random() * 1000000000)}`;
@@ -596,7 +596,7 @@ const tasks = objectTasks.map((obj) => new Task(
 class TaskCollection {
   #tasks = tasks;
 
-  #currentUser = 'Frodo Baggins';
+  #currentUser = document.getElementById('current-user').innerHTML;
 
   getPage(skip = 0, top = 10, filterConfig = {}) {
     const sortedTasks = this.#tasks.slice().sort(
@@ -3785,6 +3785,7 @@ let globalFilterConfig = {};
 
 function setCurrentUser(user) {
   headerView.display(user);
+  collection.currentUser = document.getElementById('current-user').innerHTML;
 }
 
 function addTask(task) {
@@ -3797,10 +3798,13 @@ function editTask(id, task) {
   const idArray = document.querySelectorAll('.task-id');
   idArray.forEach(element => {
     if (element.innerHTML === id) {
-      const temp = element.closest('.main--task');
-      temp.remove();
-      const temp2 = element.closest('.main--tasks-list--task');
-      temp2.remove();
+      if (element.closest('.main--task')) {
+        const temp = element.closest('.main--task');
+        temp.remove();
+      } else if (element.closest('.main--tasks-list--task')) {
+        const temp = element.closest('.main--tasks-list--task');
+        temp.remove();
+      }
     }
   });
   collection.edit(id, task.name, task.description, task.assignee, task.status, task.priority, task.isPrivate)
@@ -3808,16 +3812,21 @@ function editTask(id, task) {
 }
 
 function removeTask(id) {
-  const idArray = document.querySelectorAll('.task-id');
-  idArray.forEach(element => {
-    if (element.innerHTML === id) {
-      const temp = element.closest('.main--task');
-      temp.remove();
-      const temp2 = element.closest('.main--tasks-list--task');
-      temp2.remove();
-    }
-  });
-  collection.remove(id);
+  const isRemoved = collection.remove(id);
+  if (isRemoved) {
+    const idArray = document.querySelectorAll('.task-id');
+    idArray.forEach(element => {
+      if (element.innerHTML === id ) {
+        if (element.closest('.main--task')) {
+          const temp = element.closest('.main--task');
+          temp.remove();
+        } else if (element.closest('.main--tasks-list--task')) {
+          const temp = element.closest('.main--tasks-list--task');
+          temp.remove();
+        }
+      }
+    });
+  }
 }
 
 function getFeed(skip = 0, top = 10, filterConfig = {}) {
@@ -3833,14 +3842,44 @@ function getFeed(skip = 0, top = 10, filterConfig = {}) {
 function showTask(id) {
   const idArray = document.querySelectorAll('.task-id');
   idArray.forEach(element => {
-    const temp = element.closest('.main--task');
-    temp.remove();
-    const temp2 = element.closest('.main--tasks-list--task');
-    temp2.remove();
-  });
+    if (element.closest('.main--task')) {
+      const temp = element.closest('.main--task');
+      temp.remove();
+    } else if (element.closest('.main--tasks-list--task')) {
+      const temp = element.closest('.main--tasks-list--task');
+      temp.remove();
+    }
+});
   taskView.display(collection.get(id));
 }
 
 setCurrentUser('Frodo Baggins');
 
-getFeed(1, 0);
+getFeed(0, 1);
+
+editTask((document.querySelector('.task-id').innerHTML), collection.tasks[1]); 
+// // Не работает поскольку текущий пользователь не саруман
+
+setCurrentUser('Saruman');
+
+editTask((document.querySelector('.task-id').innerHTML), collection.tasks[5]); 
+
+removeTask(document.querySelector('.task-id').innerHTML);
+// // Не работает поскольку текущий пользователь не фродо
+
+setCurrentUser('Frodo Baggins');
+// // addTask(collection.tasks[0]);
+
+removeTask(document.querySelector('.task-id').innerHTML);
+
+addTask(collection.tasks[2]);
+
+addTask(collection.tasks[16]);
+
+getFeed(0, 10, {assignee: 'Saruman'});
+
+getFeed(0, 10, {assignee: 'Frodo Baggins'});
+
+getFeed(0, 10, {assignee: 'Frodo Baggins', priority: 'Low'});
+
+showTask(collection.tasks[15].id);
