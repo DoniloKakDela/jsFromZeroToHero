@@ -11,6 +11,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "comma-dangle": [2, "always-multiline"]
+    'comma-dangle': [2, 'always-multiline'],
+    'no-console': 'off',
+    'max-classes-per-file': 'off',
   },
 };
